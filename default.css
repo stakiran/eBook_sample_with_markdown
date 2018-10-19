@@ -1,0 +1,168 @@
+/* -------
+   Fontsize
+   ------- */
+
+/* 2, 1.5, 1.25 → ちょっと大きすぎるので小さめに */
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.25em;
+}
+
+h3 {
+  font-size: 1.125em;
+}
+
+
+/* -------
+   Borders
+   ------- */
+
+/* 見出しを枠線で強調 */
+
+h1 {
+  border-left: 8px ridge #000000;
+  border-bottom: 4px ridge #000000;
+}
+
+h2 {
+  border-left: 6px solid #000000;
+}
+
+h3 {
+  border-left: 6px double #000000;
+}
+
+/* テーブルに枠線を引く */
+
+table {
+  border-collapse: collapse;
+  border: solid 2px black;
+}
+table th{
+  border: solid 1px black;
+}
+table td {
+  border: solid 1px black;
+}
+
+/* --------------
+   Margin Padding
+   -------------- */
+
+/* 見出し間のマージンが広いので小さく*/
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h2, h3, h4 {
+  padding-left: 6px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+/* リストインデントスペース深すぎる(2em)ので小さく */
+
+ul, li {
+  margin-left: 8px;
+}
+
+/* ネスト時は <li><br/><br/><ul> と br が二つ入って二行分空くので消す */
+li br {
+  display: none;
+}
+
+/* 段落間が広すぎる(1.25em)ので, 狭く */
+
+p {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* 画像と段落間もやや狭いので, 画像側のマージンを広めに. */
+
+img {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/* 同上テーブルも */
+
+table {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/* ----
+   Code
+   ---- */
+
+/* 黒背景白文字ベースと, 左寄りすぎで見づらいのを少し離す.
+   code 単体だと pre 内の行毎に適用されるのでセレクタ指定は工夫する. */
+pre {
+  margin-left: 2px;
+  padding-left: 4px;
+  color: white;
+  background-color: #333333;
+  border: 1px solid silver;
+}
+p > code, li > code {
+  margin-left: 2px;
+  padding: 4px;
+  color: white;
+  background-color: #333333;
+}
+
+/* ----------
+   Hyper link
+   ---------- */
+
+/* アンダーライン装飾消す. 文字色は消えないので明示的に.
+   → ダメ kindle previwer では消えてくれない */
+/*
+a {
+  text-decoration: none;
+  color: black;
+}
+*/
+
+/* リンクであることをわからせるために末尾にマーク付ける.
+   → ダメ 脚注や目次にも漏れなくついてしまう */
+/*
+a:after {
+  content: "▶";
+}
+*/
+
+/* ----
+   Misc
+   ---- */
+
+/* 見た目が不揃いなのを解消する
+   - 半角英文字使うので等角じゃないと不均一になる
+   - 全角半角入り交じる行が改行前に勝手にスペース調整されるのを防ぐ
+*/
+p, li, code, table {
+  font-family: monospace;
+  word-break: break-all;
+}
+
+/* 改行位置がほんの少しずれるのを回避する */
+p {
+  text-align: justify;
+}
+
+/* 段落ごとに自動でスペースを付与 */
+p {
+  text-indent: 1em;
+}
+
+/* 太字単体だと強調が乏しいので下線も付ける */
+strong {
+  text-decoration: underline;
+}

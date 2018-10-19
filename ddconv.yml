@@ -1,0 +1,36 @@
+# ddconv.yml
+# YAMLで記述されたDDconvの設定ファイルです。
+# 「#」以降のテキストは無視されます。
+# -------------------------------------
+
+# バージョン
+ddconvVersion: 1.0 # 必須。この行は編集しないでください。
+
+# 出版物の識別子
+#identifiers:
+  - content: ★UUIDを指定。ネットで探せば生成ツールがあります。
+    identifier-type: uuid
+
+# タイトル
+titles:
+  - content: ★書籍タイトル
+
+# 作成者等
+creators:
+  - content: ★著者名
+
+# 出版物が使用する言語（必須）
+language: ja
+
+# 出版年月日
+date: ★YYYYMMDD
+
+# ページ送り方向
+pageDirection: ltr # 左から右=ltr、右から左=rtl
+
+# EPUB出力オプション
+# true: 有効、false: 無効
+options:
+  titlepage: false # 扉ページを自動生成する true|false
+  tocInSpine: true # 目次ページを自動生成する true|false
+  kepub: false # kobo Touch向け拡張子「.kepub.epub」を利用する true|false
